@@ -10,11 +10,15 @@ gem 'wheres_my_weekend'
 
 And then execute:
 
-    $ bundle
+```bash
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install wheres_my_weekend
+```bash
+$ gem install wheres_my_weekend
+```
 
 ## Usage
 
@@ -30,7 +34,6 @@ dates[0].weekend_day?
 # => false
 
 dates[1].weekend_day?
->>>>>>> now gem is made with bundle
 # => true
 ```
 
