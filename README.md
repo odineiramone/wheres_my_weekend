@@ -3,7 +3,7 @@
 ## Installation
 
 ```ruby
-gem 'where_is_my_weekend'
+gem 'where_is_my_weekend', git: 'https://github.com/OdineiRibeiro/where_is_my_weekend'
 ```
 
 ## How to use
