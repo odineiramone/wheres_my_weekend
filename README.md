@@ -1,4 +1,4 @@
-# Where's my weekend
+# Where's my weekend?
 
 [![Build Status](https://travis-ci.org/OdineiRibeiro/wheres_my_weekend.svg?branch=master)](https://travis-ci.org/OdineiRibeiro/wheres_my_weekend)
 
@@ -46,7 +46,7 @@ dates.any_weekend?
 - `weekend_dates` will return a array of weekend days from a array of dates
 
 ```ruby
-dates.weekend_dates
+[Time.new(2016, 12, 23), Time.new(2016, 12, 24), Time.new(2016, 12, 25)].weekend_dates
 # => [2016-12-24 00:00:00 -0200, 2016-12-25 00:00:00 -0200]
 ```
 
