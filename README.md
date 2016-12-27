@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.org/OdineiRibeiro/wheres_my_weekend.svg?branch=master)](https://travis-ci.org/OdineiRibeiro/wheres_my_weekend)
 
+## About
+
+This gem detects if a date is a weekend or if on a range of dates exist some weekend. Is perfect to plan your day trip!
+
 ## Installation
 
 Add this line to your application's Gemfile:
