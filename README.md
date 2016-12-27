@@ -1,5 +1,7 @@
 # Where's my weekend
 
+[![Build Status](https://travis-ci.org/OdineiRibeiro/wheres_my_weekend.svg?branch=master)](https://travis-ci.org/OdineiRibeiro/wheres_my_weekend)
+
 ## Installation
 
 Add this line to your application's Gemfile:
