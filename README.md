@@ -22,24 +22,21 @@ $ gem install wheres_my_weekend
 
 ## Usage
 
-```ruby
-dates = [Time.new(2016, 12, 23), Time.new(2016, 12, 24), Time.new(2016, 12, 25)]
-# => [2016-12-23 00:00:00 -0200, 2016-12-24 00:00:00 -0200, 2016-12-25 00:00:00 -0200]
-```
-
 - `weekend_day?` will return `true` if a date is a weekend day
 
 ```ruby
-dates[0].weekend_day?
+Time.new(2016, 12, 23).weekend_day?
 # => false
 
-dates[1].weekend_day?
+Time.new(2016, 12, 24).weekend_day?
 # => true
 ```
 
 - `any_weekend?` will return `true` if on a array of dates have any weekend day
 
 ```ruby
+dates = [Time.new(2016, 12, 23), Time.new(2016, 12, 24), Time.new(2016, 12, 25)]
+# => [2016-12-23 00:00:00 -0200, 2016-12-24 00:00:00 -0200, 2016-12-25 00:00:00 -0200]
 dates.any_weekend?
 # => true
 ```
