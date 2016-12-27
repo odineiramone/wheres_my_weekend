@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 require 'pry'
 
 describe WheresMyWeekend do
@@ -10,8 +10,10 @@ describe WheresMyWeekend do
   let(:saturday)  { Time.new(2016, 12, 24) }
   let(:sunday)    { Time.new(2016, 12, 25) }
 
-  it "has a version number" do
-    expect(WheresMyWeekend::VERSION).not_to be nil
+  context 'Gem Version' do
+    it 'has a version number' do
+      expect(WheresMyWeekend::VERSION).not_to be nil
+    end
   end
 
   context '#weekend_day?' do
@@ -37,5 +39,26 @@ describe WheresMyWeekend do
 
     it { expect(week.weekend_dates.class).to eq Array }
     it { expect(week.weekend_dates).to eq [saturday, sunday] }
+  end
+
+  context '#next_saturday' do
+    it { expect(monday.send(:next_saturday)).to eq Time.new(2016, 12, 24) }
+    it { expect(tuesday.send(:next_saturday)).to eq Time.new(2016, 12, 24) }
+    it { expect(wednesday.send(:next_saturday)).to eq Time.new(2016, 12, 24) }
+    it { expect(thursday.send(:next_saturday)).to eq Time.new(2016, 12, 24) }
+    it { expect(friday.send(:next_saturday)).to eq Time.new(2016, 12, 24) }
+
+    it { expect(saturday.send(:next_saturday)).to eq Time.new(2016, 12, 31) }
+    it { expect(sunday.send(:next_saturday)).to eq Time.new(2016, 12, 31) }
+  end
+
+  context '#last_saturday' do
+    it { expect(monday.send(:last_saturday)).to eq Time.new(2016, 12, 17) }
+    it { expect(tuesday.send(:last_saturday)).to eq Time.new(2016, 12, 17) }
+    it { expect(wednesday.send(:last_saturday)).to eq Time.new(2016, 12, 17) }
+    it { expect(thursday.send(:last_saturday)).to eq Time.new(2016, 12, 17) }
+    it { expect(friday.send(:last_saturday)).to eq Time.new(2016, 12, 17) }
+    it { expect(saturday.send(:last_saturday)).to eq Time.new(2016, 12, 17) }
+    it { expect(sunday.send(:last_saturday)).to eq Time.new(2016, 12, 24) }
   end
 end

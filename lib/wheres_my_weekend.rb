@@ -1,4 +1,4 @@
-require "wheres_my_weekend/version"
+require 'wheres_my_weekend/version'
 require 'pry'
 
 SECONDS_PER_DAY = 86_400
@@ -18,16 +18,12 @@ class Time
 
   protected
 
-  def add_days(days = 1)
-    self + (SECONDS_PER_DAY * days)
+  def last_saturday
+    saturday? ? self - 7.days : self - (wday + 1).days
   end
 
-  def last_monday
-    add_days((wday - 1) * -1)
-  end
-
-  def next_monday
-    add_days(8 - wday)
+  def next_saturday
+    saturday? ? self + 7.days : self + (6 - wday).days
   end
 end
 
@@ -38,5 +34,11 @@ class Array
 
   def weekend_dates
     reject { |date| !date.weekend_day? }
+  end
+end
+
+class Integer
+  def days
+    self * SECONDS_PER_DAY
   end
 end
