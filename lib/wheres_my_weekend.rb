@@ -1,5 +1,4 @@
 require 'wheres_my_weekend/version'
-require 'pry'
 
 SECONDS_PER_DAY = 86_400
 

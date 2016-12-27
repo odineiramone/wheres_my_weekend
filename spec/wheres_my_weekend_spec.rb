@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'pry'
 
 describe WheresMyWeekend do
   let(:monday)    { Time.new(2016, 12, 19) }
