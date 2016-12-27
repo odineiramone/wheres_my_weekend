@@ -1,5 +1,4 @@
-require "spec_helper"
-require 'pry'
+require 'spec_helper'
 
 describe WheresMyWeekend do
   let(:monday)    { Time.new(2016, 12, 19) }
@@ -10,8 +9,10 @@ describe WheresMyWeekend do
   let(:saturday)  { Time.new(2016, 12, 24) }
   let(:sunday)    { Time.new(2016, 12, 25) }
 
-  it "has a version number" do
-    expect(WheresMyWeekend::VERSION).not_to be nil
+  context 'Gem Version' do
+    it 'has a version number' do
+      expect(WheresMyWeekend::VERSION).not_to be nil
+    end
   end
 
   context '#weekend_day?' do
@@ -37,5 +38,36 @@ describe WheresMyWeekend do
 
     it { expect(week.weekend_dates.class).to eq Array }
     it { expect(week.weekend_dates).to eq [saturday, sunday] }
+  end
+
+  context '#next_saturday' do
+    it { expect(monday.send(:next_saturday)).to eq Time.new(2016, 12, 24) }
+    it { expect(tuesday.send(:next_saturday)).to eq Time.new(2016, 12, 24) }
+    it { expect(wednesday.send(:next_saturday)).to eq Time.new(2016, 12, 24) }
+    it { expect(thursday.send(:next_saturday)).to eq Time.new(2016, 12, 24) }
+    it { expect(friday.send(:next_saturday)).to eq Time.new(2016, 12, 24) }
+
+    it { expect(saturday.send(:next_saturday)).to eq Time.new(2016, 12, 31) }
+    it { expect(sunday.send(:next_saturday)).to eq Time.new(2016, 12, 31) }
+  end
+
+  context '#last_saturday' do
+    it { expect(monday.send(:last_saturday)).to eq Time.new(2016, 12, 17) }
+    it { expect(tuesday.send(:last_saturday)).to eq Time.new(2016, 12, 17) }
+    it { expect(wednesday.send(:last_saturday)).to eq Time.new(2016, 12, 17) }
+    it { expect(thursday.send(:last_saturday)).to eq Time.new(2016, 12, 17) }
+    it { expect(friday.send(:last_saturday)).to eq Time.new(2016, 12, 17) }
+    it { expect(saturday.send(:last_saturday)).to eq Time.new(2016, 12, 17) }
+    it { expect(sunday.send(:last_saturday)).to eq Time.new(2016, 12, 24) }
+  end
+
+  context '#next_weekend' do
+    it { expect(monday.next_weekend).to eq [Time.new(2016, 12, 24), Time.new(2016, 12, 25)] }
+    it { expect(tuesday.next_weekend).to eq [Time.new(2016, 12, 24), Time.new(2016, 12, 25)] }
+    it { expect(wednesday.next_weekend).to eq [Time.new(2016, 12, 24), Time.new(2016, 12, 25)] }
+    it { expect(thursday.next_weekend).to eq [Time.new(2016, 12, 24), Time.new(2016, 12, 25)] }
+    it { expect(friday.next_weekend).to eq [Time.new(2016, 12, 24), Time.new(2016, 12, 25)] }
+    it { expect(saturday.next_weekend).to eq [Time.new(2016, 12, 31), Time.new(2017, 01, 1)] }
+    it { expect(sunday.next_weekend).to eq [Time.new(2016, 12, 31), Time.new(2017, 01, 1)] }
   end
 end
