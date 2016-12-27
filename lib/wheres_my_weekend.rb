@@ -1,19 +1,33 @@
 require "wheres_my_weekend/version"
 require 'pry'
 
+SECONDS_PER_DAY = 86_400
+
 class Time
   def weekend_day?
     saturday? || sunday?
   end
 
   def next_weekend
-    weekend_day? ? [self, plus_one_day] : plus_one_day.next_weekend
+    if weekend_day?
+      [next_monday.add_days(5), next_monday.add_days(6)]
+    else
+      [last_monday.add_days(5), last_monday.add_days(6)]
+    end
   end
 
-  private
+  protected
 
-  def plus_one_day
-    self + (60 * 60 * 24)
+  def add_days(days = 1)
+    self + (SECONDS_PER_DAY * days)
+  end
+
+  def last_monday
+    add_days((wday - 1) * -1)
+  end
+
+  def next_monday
+    add_days(8 - wday)
   end
 end
 
