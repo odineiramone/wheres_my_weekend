@@ -9,11 +9,7 @@ class Time
   end
 
   def next_weekend
-    if weekend_day?
-      [next_monday.add_days(5), next_monday.add_days(6)]
-    else
-      [last_monday.add_days(5), last_monday.add_days(6)]
-    end
+    [next_saturday, next_saturday + 1.days]
   end
 
   protected

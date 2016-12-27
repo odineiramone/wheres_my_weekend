@@ -61,4 +61,14 @@ describe WheresMyWeekend do
     it { expect(saturday.send(:last_saturday)).to eq Time.new(2016, 12, 17) }
     it { expect(sunday.send(:last_saturday)).to eq Time.new(2016, 12, 24) }
   end
+
+  context '#next_weekend' do
+    it { expect(monday.next_weekend).to eq [Time.new(2016, 12, 24), Time.new(2016, 12, 25)] }
+    it { expect(tuesday.next_weekend).to eq [Time.new(2016, 12, 24), Time.new(2016, 12, 25)] }
+    it { expect(wednesday.next_weekend).to eq [Time.new(2016, 12, 24), Time.new(2016, 12, 25)] }
+    it { expect(thursday.next_weekend).to eq [Time.new(2016, 12, 24), Time.new(2016, 12, 25)] }
+    it { expect(friday.next_weekend).to eq [Time.new(2016, 12, 24), Time.new(2016, 12, 25)] }
+    it { expect(saturday.next_weekend).to eq [Time.new(2016, 12, 31), Time.new(2017, 01, 1)] }
+    it { expect(sunday.next_weekend).to eq [Time.new(2016, 12, 31), Time.new(2017, 01, 1)] }
+  end
 end

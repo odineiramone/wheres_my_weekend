@@ -54,6 +54,13 @@ dates.any_weekend?
 # => [2016-12-24 00:00:00 -0200, 2016-12-25 00:00:00 -0200]
 ```
 
+- `next_weekend` will return the next weekend from the given date
+
+```ruby
+Time.new(2016, 12, 25).next_weekend
+# => [2016-12-31 00:00:00 -0200, 2017-01-01 00:00:00 -0200]
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
