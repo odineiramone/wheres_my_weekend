@@ -4,7 +4,7 @@
 
 ## About
 
-This gem detects if a date is a weekend or if on a range of dates exist some weekend. Is perfect to plan your day trip!
+This gem provides some helpers do deal with weekends! You can see how to use then on `Usage` session
 
 ## Installation
 
