@@ -2,24 +2,55 @@ require 'wheres_my_weekend/version'
 
 SECONDS_PER_DAY = 86_400
 
-class Time
+module WeekendCheck
+
   def weekend_day?
     saturday? || sunday?
   end
 
   def next_weekend
-    [next_saturday, next_saturday + 1.days]
+    [next_saturday, next_saturday.add_days(1)]
   end
 
   protected
 
   def last_saturday
-    saturday? ? self - 7.days : self - (wday + 1).days
+    saturday? ? self.sub_days(7) : self.sub_days(wday + 1)
   end
 
   def next_saturday
-    saturday? ? self + 7.days : self + (6 - wday).days
+    saturday? ? self.add_days(7) : self.add_days(6 - wday)
   end
+
+end
+
+class Time
+  
+  include WeekendCheck
+
+
+  def add_days(n)
+    self + n.days
+  end
+
+  def sub_days(n)
+    self - n.days
+  end
+
+end
+
+class DateTime
+  
+  include WeekendCheck
+
+  def add_days(n)
+    self + n
+  end
+
+  def sub_days(n)
+    self - n
+  end
+
 end
 
 class Array
