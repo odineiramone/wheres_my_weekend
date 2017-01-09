@@ -77,4 +77,9 @@ describe WheresMyWeekend do
     it { expect(week.remove_weekends.class).to eq Array }
     it { expect(week.remove_weekends).to eq [monday, tuesday, wednesday, thursday, friday] }
   end
+
+  context '#add/sub days' do
+    it { expect(monday.add_days(1)).to eq Time.new(2016, 12, 20) }
+    it { expect(monday.sub_days(1)).to eq Time.new(2016, 12, 18) }
+  end
 end
