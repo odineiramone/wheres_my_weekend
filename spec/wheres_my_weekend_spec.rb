@@ -15,14 +15,14 @@ describe WheresMyWeekend do
     end
   end
 
-  context '#weekend_day?' do
-    it { expect(monday.weekend_day?).to eq false }
-    it { expect(tuesday.weekend_day?).to eq false }
-    it { expect(wednesday.weekend_day?).to eq false }
-    it { expect(thursday.weekend_day?).to eq false }
-    it { expect(friday.weekend_day?).to eq false }
-    it { expect(saturday.weekend_day?).to eq true }
-    it { expect(sunday.weekend_day?).to eq true }
+  context '#weekend?' do
+    it { expect(monday.weekend?).to eq false }
+    it { expect(tuesday.weekend?).to eq false }
+    it { expect(wednesday.weekend?).to eq false }
+    it { expect(thursday.weekend?).to eq false }
+    it { expect(friday.weekend?).to eq false }
+    it { expect(saturday.weekend?).to eq true }
+    it { expect(sunday.weekend?).to eq true }
   end
 
   context '#any_weekend' do
