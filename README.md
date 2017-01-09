@@ -4,7 +4,7 @@
 
 ## About
 
-This gem provides some helpers do deal with weekends! You can see how to use then on `Usage` session
+This gem provides some methods to help to deal with weekends! You can see how to use then on `Usage` session
 
 ## Installation
 
