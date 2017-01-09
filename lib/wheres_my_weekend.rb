@@ -15,19 +15,16 @@ class Time
   protected
 
   def last_saturday
-    saturday? ? self.sub_days(7) : self.sub_days(wday + 1)
+    saturday? ? sub_days(7) : sub_days(wday + 1)
   end
 
   def next_saturday
-    saturday? ? self.add_days(7) : self.add_days(6 - wday)
+    saturday? ? add_days(7) : add_days(6 - wday)
   end
-
 end
 
 class Time
-  
   include WeekendCheck
-
 
   def add_days(n)
     self + n.days
@@ -36,11 +33,9 @@ class Time
   def sub_days(n)
     self - n.days
   end
-
 end
 
 class DateTime
-  
   include WeekendCheck
 
   def add_days(n)
@@ -50,7 +45,6 @@ class DateTime
   def sub_days(n)
     self - n
   end
-
 end
 
 class Array

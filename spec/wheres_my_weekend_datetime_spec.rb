@@ -61,13 +61,12 @@ describe WheresMyWeekend do
     it { expect(wednesday.next_weekend).to eq [DateTime.new(2016, 12, 24), DateTime.new(2016, 12, 25)] }
     it { expect(thursday.next_weekend).to eq [DateTime.new(2016, 12, 24), DateTime.new(2016, 12, 25)] }
     it { expect(friday.next_weekend).to eq [DateTime.new(2016, 12, 24), DateTime.new(2016, 12, 25)] }
-    it { expect(saturday.next_weekend).to eq [DateTime.new(2016, 12, 31), DateTime.new(2017, 01, 1)] }
-    it { expect(sunday.next_weekend).to eq [DateTime.new(2016, 12, 31), DateTime.new(2017, 01, 1)] }
+    it { expect(saturday.next_weekend).to eq [DateTime.new(2016, 12, 31), DateTime.new(2017, 1, 1)] }
+    it { expect(sunday.next_weekend).to eq [DateTime.new(2016, 12, 31), DateTime.new(2017, 1, 1)] }
   end
 
   context '#add/sub days' do
     it { expect(monday.add_days(1)).to eq DateTime.new(2016, 12, 20) }
     it { expect(monday.sub_days(1)).to eq DateTime.new(2016, 12, 18) }
-  end  
-
+  end
 end

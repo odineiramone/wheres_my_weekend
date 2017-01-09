@@ -82,5 +82,4 @@ describe WheresMyWeekend do
     it { expect(monday.add_days(1)).to eq Time.new(2016, 12, 20) }
     it { expect(monday.sub_days(1)).to eq Time.new(2016, 12, 18) }
   end
-
 end
