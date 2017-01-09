@@ -2,9 +2,9 @@ require 'wheres_my_weekend/version'
 
 SECONDS_PER_DAY = 86_400
 
-module WeekendCheck
-
-  def weekend_day?
+# rubocop:disable Style/Documentation
+class Time
+  def weekend?
     saturday? || sunday?
   end
 
@@ -55,15 +55,15 @@ end
 
 class Array
   def any_weekend?
-    map(&:weekend_day?).any?
+    map(&:weekend?).any?
   end
 
   def weekend_dates
-    reject { |date| !date.weekend_day? }
+    reject { |date| !date.weekend? }
   end
 
   def remove_weekends
-    reject(&:weekend_day?)
+    reject(&:weekend?)
   end
 end
 
