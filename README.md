@@ -61,6 +61,13 @@ Time.new(2016, 12, 25).next_weekend
 # => [2016-12-31 00:00:00 -0200, 2017-01-01 00:00:00 -0200]
 ```
 
+- `remove_weekends` will return a array of weekdays from a array of dates
+
+```ruby
+[Time.new(2016, 12, 23), Time.new(2016, 12, 24), Time.new(2016, 12, 25)].weekend_dates
+# => [2016-12-23 00:00:00 -0200]
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/odineiribeiro/wheres_my_weekend. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.

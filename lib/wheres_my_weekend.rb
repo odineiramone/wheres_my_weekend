@@ -30,6 +30,10 @@ class Array
   def weekend_dates
     reject { |date| !date.weekend_day? }
   end
+
+  def remove_weekends
+    reject(&:weekend_day?)
+  end
 end
 
 class Integer
