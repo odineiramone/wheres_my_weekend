@@ -70,4 +70,11 @@ describe WheresMyWeekend do
     it { expect(saturday.next_weekend).to eq [Time.new(2016, 12, 31), Time.new(2017, 01, 1)] }
     it { expect(sunday.next_weekend).to eq [Time.new(2016, 12, 31), Time.new(2017, 01, 1)] }
   end
+
+  context '#remove_weekends' do
+    let(:week) { [monday, tuesday, wednesday, thursday, friday, saturday, sunday] }
+
+    it { expect(week.remove_weekends.class).to eq Array }
+    it { expect(week.remove_weekends).to eq [monday, tuesday, wednesday, thursday, friday] }
+  end
 end
