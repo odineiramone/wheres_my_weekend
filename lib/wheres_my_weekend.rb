@@ -2,6 +2,7 @@ require 'wheres_my_weekend/version'
 
 SECONDS_PER_DAY = 86_400
 
+# rubocop:disable Style/Documentation
 class Time
   def weekend?
     saturday? || sunday?
