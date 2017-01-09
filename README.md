@@ -28,13 +28,13 @@ $ gem install wheres_my_weekend
 
 ## Usage
 
-- `weekend_day?` will return `true` if a date is a weekend day
+- `weekend?` will return `true` if a date is a weekend day
 
 ```ruby
-Time.new(2016, 12, 23).weekend_day?
+Time.new(2016, 12, 23).weekend?
 # => false
 
-Time.new(2016, 12, 24).weekend_day?
+Time.new(2016, 12, 24).weekend?
 # => true
 ```
 
